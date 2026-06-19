@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nhom9_Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86a448b32b7f7046b98e7b37f6b89e5322137bc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+020c727612ce69fec00150f3bd9e98a32383c9aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nhom9_Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nhom9_Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
