@@ -4414,23 +4414,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kien8\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Nhom9_Web.csproj",
+      "projectUniqueName": "C:\\Hutech\\SpeedShop\\Nhom9_Web\\Nhom9_Web.csproj",
       "projectName": "Nhom9_Web",
-      "projectPath": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Nhom9_Web.csproj",
-      "packagesPath": "C:\\Users\\kien8\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\obj\\",
+      "projectPath": "C:\\Hutech\\SpeedShop\\Nhom9_Web\\Nhom9_Web.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Hutech\\SpeedShop\\Nhom9_Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kien8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4439,7 +4439,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4496,24 +4495,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.27, 8.0.27]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.27, 8.0.27]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.27, 8.0.27]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.27, 8.0.27]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
