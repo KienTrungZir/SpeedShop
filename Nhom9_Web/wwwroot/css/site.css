@@ -1,0 +1,180 @@
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+}
+
+.section-title {
+  font-weight: 700;
+  color: #212529;
+}
+
+.product-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.product-card .card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.product-img-placeholder {
+  height: 200px;
+  font-size: 4rem;
+  background: #f0f4ff;
+}
+
+.product-img-placeholder-lg {
+  height: 360px;
+  font-size: 6rem;
+  background: #f0f4ff;
+}
+
+.product-detail-img {
+  max-height: 400px;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.product-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8em;
+}
+
+.category-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s;
+}
+
+.category-card:hover {
+  border-color: #0d6efd;
+  background: #f0f4ff;
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  font-size: 0.65rem;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-messages {
+  height: 450px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem;
+  word-break: break-word;
+}
+
+.chat-bubble.mine {
+  align-self: flex-end;
+  background: #0d6efd;
+  color: #fff;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.chat-bubble.theirs {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.chat-sender {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  color: #6c757d;
+}
+
+.chat-time {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.75;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  background: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.chat-badge {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  font-size: 0.65rem;
+}

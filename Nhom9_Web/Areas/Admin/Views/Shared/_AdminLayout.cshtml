@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản trị</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        .admin-sidebar { min-height: calc(100vh - 56px); background: #212529; }
+        .admin-sidebar .nav-link { color: #adb5bd; border-radius: .375rem; margin-bottom: .25rem; }
+        .admin-sidebar .nav-link:hover, .admin-sidebar .nav-link.active { color: #fff; background: #0d6efd; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <a class="navbar-brand fw-bold" asp-area="Admin" asp-controller="Home" asp-action="Index">🏸 Admin Panel</a>
+        <div class="d-flex gap-2 align-items-center">
+            <span class="text-light small d-none d-md-inline">@User.Identity?.Name</span>
+            <a class="btn btn-outline-light btn-sm" asp-area="" asp-controller="Home" asp-action="Index">Về cửa hàng</a>
+            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" class="d-inline">
+                <button type="submit" class="btn btn-outline-danger btn-sm">Đăng xuất</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 col-lg-2 admin-sidebar p-3">
+                <nav class="nav flex-column">
+                    <a class="nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">📊 Tổng quan</a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="SanPham" asp-action="Index">📦 Sản phẩm</a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="DonHang" asp-action="Index">🧾 Đơn hàng</a>
+                    <a class="nav-link" asp-area="" asp-controller="Chat" asp-action="Index">💬 Tin nhắn</a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="DanhMuc" asp-action="Index">📁 Danh mục</a>
+                    <a class="nav-link" asp-area="Admin" asp-controller="ThuongHieu" asp-action="Index">🏷️ Thương hiệu</a>
+                </nav>
+            </aside>
+            <main class="col-md-9 col-lg-10 p-4">
+                @if (TempData["ThanhCong"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show">
+                        @TempData["ThanhCong"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+                @if (TempData["Loi"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        @TempData["Loi"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

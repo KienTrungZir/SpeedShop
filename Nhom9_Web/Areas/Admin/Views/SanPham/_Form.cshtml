@@ -1,0 +1,63 @@
+@model SanPham
+
+<div class="row">
+    <div class="col-md-8 mb-3">
+        <label asp-for="TenSanPham" class="form-label">Tên sản phẩm</label>
+        <input asp-for="TenSanPham" class="form-control" />
+        <span asp-validation-for="TenSanPham" class="text-danger"></span>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label asp-for="AnhDaiDien" class="form-label">URL ảnh đại diện</label>
+        <input asp-for="AnhDaiDien" class="form-control" placeholder="/images/vot.jpg" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="DanhMucId" class="form-label">Danh mục</label>
+        <select asp-for="DanhMucId" class="form-select" asp-items="ViewBag.DanhMucId"></select>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="ThuongHieuId" class="form-label">Thương hiệu</label>
+        <select asp-for="ThuongHieuId" class="form-select" asp-items="ViewBag.ThuongHieuId"></select>
+    </div>
+</div>
+<div class="mb-3">
+    <label asp-for="MoTaNgan" class="form-label">Mô tả ngắn</label>
+    <textarea asp-for="MoTaNgan" class="form-control" rows="2"></textarea>
+</div>
+<div class="mb-3">
+    <label asp-for="MoTaChiTiet" class="form-label">Mô tả chi tiết</label>
+    <textarea asp-for="MoTaChiTiet" class="form-control" rows="4"></textarea>
+</div>
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <label asp-for="GiaGoc" class="form-label">Giá gốc</label>
+        <input asp-for="GiaGoc" class="form-control" type="number" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="GiaBan" class="form-label">Giá bán</label>
+        <input asp-for="GiaBan" class="form-control" type="number" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="PhanTramGiamGia" class="form-label">Giảm giá (%)</label>
+        <input asp-for="PhanTramGiamGia" class="form-control" type="number" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="SoLuongTon" class="form-label">Tồn kho</label>
+        <input asp-for="SoLuongTon" class="form-control" type="number" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 mb-3"><label asp-for="TrongLuong" class="form-label">Trọng lượng</label><input asp-for="TrongLuong" class="form-control" /></div>
+    <div class="col-md-3 mb-3"><label asp-for="DoCungVot" class="form-label">Độ cứng vợt</label><input asp-for="DoCungVot" class="form-control" /></div>
+    <div class="col-md-3 mb-3"><label asp-for="MauSac" class="form-label">Màu sắc</label><input asp-for="MauSac" class="form-control" /></div>
+    <div class="col-md-3 mb-3"><label asp-for="KichThuoc" class="form-label">Kích thước</label><input asp-for="KichThuoc" class="form-control" /></div>
+</div>
+<div class="form-check mb-2">
+    <input asp-for="NoiBat" class="form-check-input" />
+    <label asp-for="NoiBat" class="form-check-label">Sản phẩm nổi bật</label>
+</div>
+<div class="form-check mb-3">
+    <input asp-for="HienThi" class="form-check-input" />
+    <label asp-for="HienThi" class="form-check-label">Hiển thị trên web</label>
+</div>

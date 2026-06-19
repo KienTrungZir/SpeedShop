@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Tổng quan";
+}
+
+<h2 class="mb-4">Bảng điều khiển</h2>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card text-bg-primary">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Sản phẩm</h6>
+                <h3 class="card-title mb-0">@ViewBag.TongSanPham</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-success">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Đơn hàng</h6>
+                <h3 class="card-title mb-0">@ViewBag.TongDonHang</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-warning">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Chờ xử lý</h6>
+                <h3 class="card-title mb-0">@ViewBag.DonChoXuLy</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-info">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Khách hàng</h6>
+                <h3 class="card-title mb-0">@ViewBag.TongKhachHang</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5>Doanh thu</h5>
+        <h3 class="text-danger">@(((decimal)ViewBag.DoanhThu).ToString("N0"))đ</h3>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header fw-bold">Đơn hàng mới nhất</div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày đặt</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dh in (List<DonHang>)ViewBag.DonHangMoi)
+                {
+                    <tr>
+                        <td><a asp-area="Admin" asp-controller="DonHang" asp-action="ChiTiet" asp-route-id="@dh.Id">@dh.MaDonHang</a></td>
+                        <td>@dh.HoTenNguoiNhan</td>
+                        <td>@dh.TongThanhToan.ToString("N0")đ</td>
+                        <td><span class="badge bg-secondary">@dh.TrangThai</span></td>
+                        <td>@dh.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@model ThuongHieu
+@{ ViewData["Title"] = "Thêm thương hiệu"; }
+<h2>Thêm thương hiệu</h2>
+<form asp-action="Tao" method="post">
+    @Html.AntiForgeryToken()
+    <div class="mb-3"><label asp-for="TenThuongHieu" class="form-label">Tên thương hiệu</label><input asp-for="TenThuongHieu" class="form-control" /></div>
+    <div class="mb-3"><label asp-for="QuocGia" class="form-label">Quốc gia</label><input asp-for="QuocGia" class="form-control" /></div>
+    <div class="mb-3"><label asp-for="MoTa" class="form-label">Mô tả</label><textarea asp-for="MoTa" class="form-control"></textarea></div>
+    <div class="form-check mb-3"><input asp-for="HienThi" class="form-check-input" /><label asp-for="HienThi" class="form-check-label">Hiển thị</label></div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

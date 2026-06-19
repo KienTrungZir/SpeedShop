@@ -1,0 +1,76 @@
+@model SanPhamIndexViewModel
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<div class="row">
+    <aside class="col-lg-3 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold">Bộ lọc</div>
+            <div class="card-body">
+                <h6 class="text-muted">Danh mục</h6>
+                <div class="list-group list-group-flush mb-3">
+                    <a asp-action="Index" class="list-group-item list-group-item-action @(Model.DanhMucId == null ? "active" : "")">Tất cả</a>
+                    @foreach (var dm in Model.DanhMucs)
+                    {
+                        <a asp-action="Index" asp-route-danhMucId="@dm.Id" asp-route-thuongHieuId="@Model.ThuongHieuId" asp-route-tuKhoa="@Model.TuKhoa"
+                           class="list-group-item list-group-item-action @(Model.DanhMucId == dm.Id ? "active" : "")">@dm.TenDanhMuc</a>
+                    }
+                </div>
+                <h6 class="text-muted">Thương hiệu</h6>
+                <div class="list-group list-group-flush">
+                    <a asp-action="Index" asp-route-danhMucId="@Model.DanhMucId" class="list-group-item list-group-item-action @(Model.ThuongHieuId == null ? "active" : "")">Tất cả</a>
+                    @foreach (var th in Model.ThuongHieus)
+                    {
+                        <a asp-action="Index" asp-route-danhMucId="@Model.DanhMucId" asp-route-thuongHieuId="@th.Id" asp-route-tuKhoa="@Model.TuKhoa"
+                           class="list-group-item list-group-item-action @(Model.ThuongHieuId == th.Id ? "active" : "")">@th.TenThuongHieu</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="col-lg-9">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="section-title mb-0">Sản phẩm</h2>
+            @if (!string.IsNullOrEmpty(Model.TuKhoa))
+            {
+                <span class="text-muted">Kết quả cho: "<strong>@Model.TuKhoa</strong>"</span>
+            }
+        </div>
+
+        @if (Model.SanPhams.Any())
+        {
+            <div class="row g-3">
+                @foreach (var sp in Model.SanPhams)
+                {
+                    <div class="col-6 col-md-4">
+                        <partial name="_SanPhamCard" model="sp" />
+                    </div>
+                }
+            </div>
+
+            @if (Model.TongTrang > 1)
+            {
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        @for (int i = 1; i <= Model.TongTrang; i++)
+                        {
+                            <li class="page-item @(i == Model.Trang ? "active" : "")">
+                                <a class="page-link" asp-action="Index"
+                                   asp-route-danhMucId="@Model.DanhMucId"
+                                   asp-route-thuongHieuId="@Model.ThuongHieuId"
+                                   asp-route-tuKhoa="@Model.TuKhoa"
+                                   asp-route-trang="@i">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">Không tìm thấy sản phẩm phù hợp.</div>
+        }
+    </div>
+</div>

@@ -1,0 +1,13 @@
+@model DanhMuc
+@{ ViewData["Title"] = "Sửa danh mục"; }
+<h2>Sửa danh mục</h2>
+<form asp-action="Sua" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3"><label asp-for="TenDanhMuc" class="form-label">Tên danh mục</label><input asp-for="TenDanhMuc" class="form-control" /></div>
+    <div class="mb-3"><label asp-for="MoTa" class="form-label">Mô tả</label><textarea asp-for="MoTa" class="form-control"></textarea></div>
+    <div class="mb-3"><label asp-for="ThuTu" class="form-label">Thứ tự</label><input asp-for="ThuTu" class="form-control" type="number" /></div>
+    <div class="form-check mb-3"><input asp-for="HienThi" class="form-check-input" /><label asp-for="HienThi" class="form-check-label">Hiển thị</label></div>
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

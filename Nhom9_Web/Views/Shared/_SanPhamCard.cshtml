@@ -1,0 +1,33 @@
+@model SanPhamItemViewModel
+
+<div class="card h-100 product-card shadow-sm">
+    <a asp-controller="SanPham" asp-action="ChiTiet" asp-route-id="@Model.Id" class="text-decoration-none text-dark">
+        <div class="product-img-wrap">
+            @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
+            {
+                <img src="@Model.AnhDaiDien" class="card-img-top" alt="@Model.TenSanPham" />
+            }
+            else
+            {
+                <div class="product-img-placeholder d-flex align-items-center justify-content-center">
+                    <span>🏸</span>
+                </div>
+            }
+            @if (Model.PhanTramGiamGia > 0)
+            {
+                <span class="badge bg-danger product-badge">-@Model.PhanTramGiamGia%</span>
+            }
+        </div>
+        <div class="card-body">
+            <p class="text-muted small mb-1">@Model.TenThuongHieu · @Model.TenDanhMuc</p>
+            <h6 class="card-title product-title">@Model.TenSanPham</h6>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="fw-bold text-danger">@Model.GiaBan.ToString("N0")đ</span>
+                @if (Model.DiemDanhGia.HasValue)
+                {
+                    <small class="text-warning">★ @Model.DiemDanhGia:F1</small>
+                }
+            </div>
+        </div>
+    </a>
+</div>

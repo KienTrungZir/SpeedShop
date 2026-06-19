@@ -1,0 +1,16 @@
+@model SanPham
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+
+<h2 class="mb-3">Thêm sản phẩm</h2>
+<form asp-action="Tao" method="post">
+    @Html.AntiForgeryToken()
+    <partial name="_Form" />
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

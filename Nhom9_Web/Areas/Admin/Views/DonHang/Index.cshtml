@@ -1,0 +1,44 @@
+@model List<DonHang>
+@{
+    ViewData["Title"] = "Quản lý đơn hàng";
+}
+
+<h2 class="mb-3">Đơn hàng</h2>
+
+<div class="mb-3">
+    <a asp-action="Index" class="btn btn-sm @(ViewBag.TrangThai == null ? "btn-primary" : "btn-outline-primary")">Tất cả</a>
+    @foreach (TrangThaiDonHang tt in Enum.GetValues(typeof(TrangThaiDonHang)))
+    {
+        <a asp-action="Index" asp-route-trangThai="@tt" class="btn btn-sm @(ViewBag.TrangThai?.Equals(tt) == true ? "btn-primary" : "btn-outline-secondary")">@tt</a>
+    }
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>SĐT</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Ngày đặt</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dh in Model)
+            {
+                <tr>
+                    <td>@dh.MaDonHang</td>
+                    <td>@dh.HoTenNguoiNhan</td>
+                    <td>@dh.SoDienThoai</td>
+                    <td>@dh.TongThanhToan.ToString("N0")đ</td>
+                    <td><span class="badge bg-secondary">@dh.TrangThai</span></td>
+                    <td>@dh.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td><a asp-action="ChiTiet" asp-route-id="@dh.Id" class="btn btn-sm btn-outline-primary">Chi tiết</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

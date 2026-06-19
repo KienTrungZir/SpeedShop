@@ -1,0 +1,155 @@
+@model SanPhamDetailsViewModel
+@{
+    ViewData["Title"] = Model.SanPham.TenSanPham;
+    var sp = Model.SanPham;
+}
+
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="SanPham" asp-action="Index">Sản phẩm</a></li>
+        <li class="breadcrumb-item active">@sp.TenSanPham</li>
+    </ol>
+</nav>
+
+<div class="row g-4">
+    <div class="col-md-5">
+        <div class="card shadow-sm">
+            @if (!string.IsNullOrEmpty(sp.AnhDaiDien))
+            {
+                <img src="@sp.AnhDaiDien" class="card-img-top product-detail-img" alt="@sp.TenSanPham" />
+            }
+            else
+            {
+                <div class="product-img-placeholder-lg d-flex align-items-center justify-content-center">🏸</div>
+            }
+        </div>
+        @if (sp.HinhAnhSanPhams.Any())
+        {
+            <div class="row g-2 mt-2">
+                @foreach (var img in sp.HinhAnhSanPhams.OrderBy(h => h.ThuTu))
+                {
+                    <div class="col-3">
+                        <img src="@img.DuongDanAnh" class="img-thumbnail" alt="" />
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="col-md-7">
+        <p class="text-muted mb-1">@sp.ThuongHieu.TenThuongHieu · @sp.DanhMuc.TenDanhMuc</p>
+        <h2 class="fw-bold">@sp.TenSanPham</h2>
+
+        @if (sp.DiemDanhGia.HasValue)
+        {
+            <p class="text-warning">★ @sp.DiemDanhGia:F1 <span class="text-muted small">(@sp.SoLuotDanhGia đánh giá)</span></p>
+        }
+
+        <div class="mb-3">
+            @if (sp.PhanTramGiamGia > 0)
+            {
+                <span class="text-muted text-decoration-line-through me-2">@sp.GiaGoc.ToString("N0")đ</span>
+                <span class="badge bg-danger">-@sp.PhanTramGiamGia%</span>
+            }
+            <h3 class="text-danger fw-bold d-inline ms-2">@sp.GiaBan.ToString("N0")đ</h3>
+        </div>
+
+        @if (!string.IsNullOrEmpty(sp.MoTaNgan))
+        {
+            <p>@sp.MoTaNgan</p>
+        }
+
+        <ul class="list-unstyled small text-muted mb-3">
+            @if (!string.IsNullOrEmpty(sp.TrongLuong)) { <li>Trọng lượng: @sp.TrongLuong</li> }
+            @if (!string.IsNullOrEmpty(sp.DoCungVot)) { <li>Độ cứng vợt: @sp.DoCungVot</li> }
+            @if (!string.IsNullOrEmpty(sp.ChatLieu)) { <li>Chất liệu: @sp.ChatLieu</li> }
+            @if (!string.IsNullOrEmpty(sp.MauSac)) { <li>Màu sắc: @sp.MauSac</li> }
+            @if (!string.IsNullOrEmpty(sp.KichThuoc)) { <li>Kích thước: @sp.KichThuoc</li> }
+            <li>Tồn kho: <span id="tonKho">@sp.SoLuongTon</span></li>
+        </ul>
+
+        <form asp-controller="GioHang" asp-action="Them" method="post" class="row g-2 align-items-end">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="sanPhamId" value="@sp.Id" />
+
+            @if (sp.BienTheSanPhams.Any())
+            {
+                <div class="col-md-6">
+                    <label class="form-label">Chọn biến thể</label>
+                    <select name="bienTheId" class="form-select" id="bienTheSelect" required>
+                        @foreach (var bt in sp.BienTheSanPhams)
+                        {
+                            <option value="@bt.Id" data-ton="@bt.SoLuongTon" data-gia="@bt.GiaBan">
+                                @bt.TenBienThe — @bt.GiaBan.ToString("N0")đ (còn @bt.SoLuongTon)
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
+
+            <div class="col-md-3">
+                <label class="form-label">Số lượng</label>
+                <input type="number" name="soLuong" value="1" min="1" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100" @(sp.SoLuongTon <= 0 && !sp.BienTheSanPhams.Any() ? "disabled" : "")>
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(sp.MoTaChiTiet))
+{
+    <div class="card shadow-sm mt-4">
+        <div class="card-header fw-bold">Mô tả chi tiết</div>
+        <div class="card-body">@Html.Raw(sp.MoTaChiTiet.Replace("\n", "<br/>"))</div>
+    </div>
+}
+
+@if (Model.DanhGias.Any())
+{
+    <div class="mt-4">
+        <h4 class="section-title">Đánh giá</h4>
+        @foreach (var dg in Model.DanhGias)
+        {
+            <div class="card shadow-sm mb-2">
+                <div class="card-body py-2">
+                    <strong>@dg.User.HoTen</strong>
+                    <span class="text-warning">@string.Concat(Enumerable.Repeat("★", dg.Diem))</span>
+                    <small class="text-muted ms-2">@dg.NgayDanhGia.ToString("dd/MM/yyyy")</small>
+                    @if (!string.IsNullOrEmpty(dg.BinhLuan))
+                    {
+                        <p class="mb-0 mt-1">@dg.BinhLuan</p>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@if (Model.SanPhamLienQuan.Any())
+{
+    <div class="mt-5">
+        <h4 class="section-title mb-3">Sản phẩm liên quan</h4>
+        <div class="row g-3">
+            @foreach (var item in Model.SanPhamLienQuan)
+            {
+                <div class="col-6 col-md-3">
+                    <partial name="_SanPhamCard" model="item" />
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        document.getElementById('bienTheSelect')?.addEventListener('change', function () {
+            const opt = this.options[this.selectedIndex];
+            document.getElementById('tonKho').textContent = opt.dataset.ton;
+        });
+    </script>
+}

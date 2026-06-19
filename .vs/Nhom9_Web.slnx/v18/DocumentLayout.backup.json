@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\migrations\\20260609125411_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\migrations\\20260609125411_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|d:\\myproject\\laptrinhweb\\nhom9_web\\nhom9_web\\nhom9_web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B9D5FFB6-3BE2-E59C-2133-C1A20A347A20}|Nhom9_Web\\Nhom9_Web.csproj|solutionrelative:nhom9_web\\nhom9_web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Nhom9_Web\\Hubs\\ChatHub.cs",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Nhom9_Web\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T07:27:38.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Nhom9_Web\\Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Nhom9_Web\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T13:06:48.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20260609125411_InitialCreate.cs",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Migrations\\20260609125411_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Nhom9_Web\\Migrations\\20260609125411_InitialCreate.cs",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Migrations\\20260609125411_InitialCreate.cs",
+              "RelativeToolTip": "Nhom9_Web\\Migrations\\20260609125411_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:54:11.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Program.cs",
+              "RelativeDocumentMoniker": "Nhom9_Web\\Program.cs",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Program.cs",
+              "RelativeToolTip": "Nhom9_Web\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:52:55.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Nhom9_Web\\appsettings.json",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\appsettings.json",
+              "RelativeToolTip": "Nhom9_Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-09T12:51:52.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Nhom9_Web.csproj",
+              "DocumentMoniker": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Nhom9_Web.csproj",
+              "RelativeDocumentMoniker": "Nhom9_Web\\Nhom9_Web.csproj",
+              "ToolTip": "D:\\MyProject\\LapTrinhWeb\\Nhom9_Web\\Nhom9_Web\\Nhom9_Web.csproj",
+              "RelativeToolTip": "Nhom9_Web\\Nhom9_Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-09T12:41:55.288Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

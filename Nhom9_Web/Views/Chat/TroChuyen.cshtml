@@ -1,0 +1,48 @@
+@model TroChuyenViewModel
+@{
+    ViewData["Title"] = $"Chat với {Model.DoiTacTen}";
+}
+
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index">Tin nhắn</a></li>
+        <li class="breadcrumb-item active">@Model.DoiTacTen</li>
+    </ol>
+</nav>
+
+<div class="card shadow-sm chat-container">
+    <div class="card-header d-flex align-items-center gap-2 py-3">
+        <div class="chat-avatar">💬</div>
+        <div>
+            <strong>@Model.DoiTacTen</strong>
+            <div class="small text-muted" id="connectionStatus">Đang kết nối...</div>
+        </div>
+    </div>
+    <div class="card-body chat-messages p-3" id="chatMessages">
+        @foreach (var tin in Model.TinNhans)
+        {
+            <div class="chat-bubble @(tin.LaCuaToi ? "mine" : "theirs")" data-id="@tin.Id">
+                @if (!tin.LaCuaToi)
+                {
+                    <small class="chat-sender">@tin.NguoiGuiTen</small>
+                }
+                <div class="chat-text">@tin.NoiDung</div>
+                <small class="chat-time">@tin.NgayGui.ToLocalTime().ToString("HH:mm dd/MM")</small>
+            </div>
+        }
+    </div>
+    <div class="card-footer">
+        <form id="chatForm" class="d-flex gap-2">
+            <input type="text" id="messageInput" class="form-control" placeholder="Nhập tin nhắn..." maxlength="2000" autocomplete="off" />
+            <button type="submit" class="btn btn-primary" id="sendBtn">Gửi</button>
+        </form>
+    </div>
+</div>
+
+<input type="hidden" id="currentUserId" value="@Model.NguoiDungId" />
+<input type="hidden" id="partnerId" value="@Model.DoiTacId" />
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+}

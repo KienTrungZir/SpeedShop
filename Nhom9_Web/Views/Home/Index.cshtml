@@ -1,0 +1,72 @@
+@model TrangChuViewModel
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="hero-banner rounded-3 mb-4 p-5 text-white text-center">
+    <h1 class="display-5 fw-bold">Cửa hàng đồ cầu lông</h1>
+    <p class="lead mb-4">Vợt, giày, quần áo và phụ kiện chính hãng cho mọi trình độ</p>
+    <a asp-controller="SanPham" asp-action="Index" class="btn btn-light btn-lg">Mua sắm ngay</a>
+</section>
+
+@if (Model.DanhMucs.Any())
+{
+    <section class="mb-5">
+        <h3 class="section-title mb-3">Danh mục sản phẩm</h3>
+        <div class="row g-3">
+            @foreach (var dm in Model.DanhMucs)
+            {
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a asp-controller="SanPham" asp-action="Index" asp-route-danhMucId="@dm.Id"
+                       class="category-card d-block text-center text-decoration-none p-3 rounded-3 shadow-sm">
+                        <div class="category-icon mb-2">🏸</div>
+                        <span class="fw-semibold text-dark small">@dm.TenDanhMuc</span>
+                    </a>
+                </div>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.SanPhamNoiBat.Any())
+{
+    <section class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="section-title mb-0">Sản phẩm nổi bật</h3>
+            <a asp-controller="SanPham" asp-action="Index" class="btn btn-outline-primary btn-sm">Xem tất cả</a>
+        </div>
+        <div class="row g-3">
+            @foreach (var sp in Model.SanPhamNoiBat)
+            {
+                <div class="col-6 col-md-4 col-lg-3">
+                    <partial name="_SanPhamCard" model="sp" />
+                </div>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.SanPhamMoi.Any())
+{
+    <section class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="section-title mb-0">Sản phẩm mới</h3>
+            <a asp-controller="SanPham" asp-action="Index" class="btn btn-outline-primary btn-sm">Xem tất cả</a>
+        </div>
+        <div class="row g-3">
+            @foreach (var sp in Model.SanPhamMoi)
+            {
+                <div class="col-6 col-md-4 col-lg-3">
+                    <partial name="_SanPhamCard" model="sp" />
+                </div>
+            }
+        </div>
+    </section>
+}
+
+@if (!Model.SanPhamNoiBat.Any() && !Model.SanPhamMoi.Any())
+{
+    <div class="alert alert-info">
+        Chưa có sản phẩm. Hãy thêm dữ liệu vào database để hiển thị tại đây.
+    </div>
+}

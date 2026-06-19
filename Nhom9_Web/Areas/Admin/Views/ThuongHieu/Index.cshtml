@@ -1,0 +1,31 @@
+@model List<ThuongHieu>
+@{
+    ViewData["Title"] = "Thương hiệu";
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <h2>Thương hiệu</h2>
+    <a asp-action="Tao" class="btn btn-primary">+ Thêm</a>
+</div>
+
+<table class="table table-bordered">
+    <thead class="table-light"><tr><th>ID</th><th>Tên</th><th>Quốc gia</th><th>Hiển thị</th><th></th></tr></thead>
+    <tbody>
+        @foreach (var th in Model)
+        {
+            <tr>
+                <td>@th.Id</td>
+                <td>@th.TenThuongHieu</td>
+                <td>@th.QuocGia</td>
+                <td>@(th.HienThi ? "✓" : "✗")</td>
+                <td>
+                    <a asp-action="Sua" asp-route-id="@th.Id" class="btn btn-sm btn-outline-primary">Sửa</a>
+                    <form asp-action="Xoa" asp-route-id="@th.Id" method="post" class="d-inline" onsubmit="return confirm('Xóa?');">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-outline-danger">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

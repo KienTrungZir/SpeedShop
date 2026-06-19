@@ -1,0 +1,96 @@
+@model ThanhToanViewModel
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<h2 class="section-title mb-4">Thanh toán</h2>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold">Thông tin giao hàng</div>
+            <div class="card-body">
+                <form asp-action="ThanhToan" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="HoTenNguoiNhan" class="form-label"></label>
+                        <input asp-for="HoTenNguoiNhan" class="form-control" />
+                        <span asp-validation-for="HoTenNguoiNhan" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="SoDienThoai" class="form-label"></label>
+                        <input asp-for="SoDienThoai" class="form-control" />
+                        <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DiaChiGiao" class="form-label"></label>
+                        <input asp-for="DiaChiGiao" class="form-control" placeholder="Số nhà, tên đường..." />
+                        <span asp-validation-for="DiaChiGiao" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="PhuongXa" class="form-label"></label>
+                            <input asp-for="PhuongXa" class="form-control" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="QuanHuyen" class="form-label"></label>
+                            <input asp-for="QuanHuyen" class="form-control" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="TinhThanh" class="form-label"></label>
+                            <input asp-for="TinhThanh" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PhuongThucThanhToan" class="form-label"></label>
+                        <select asp-for="PhuongThucThanhToan" class="form-select" asp-items="Html.GetEnumSelectList<PhuongThucThanhToan>()"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="MaGiamGia" class="form-label"></label>
+                        <input asp-for="MaGiamGia" class="form-control" placeholder="Nhập mã nếu có" />
+                        <span asp-validation-for="MaGiamGia" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="GhiChu" class="form-label"></label>
+                        <textarea asp-for="GhiChu" class="form-control" rows="2"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Đặt hàng — @Model.TongThanhToan.ToString("N0")đ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-header fw-bold">Đơn hàng (@Model.GioHang.TongSoLuong sản phẩm)</div>
+            <div class="card-body">
+                @foreach (var item in Model.GioHang.Items)
+                {
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span>@item.TenSanPham x @item.SoLuong</span>
+                        <span>@item.ThanhTien.ToString("N0")đ</span>
+                    </div>
+                }
+                <hr />
+                <div class="d-flex justify-content-between"><span>Tạm tính</span><span>@Model.GioHang.TongTien.ToString("N0")đ</span></div>
+                <div class="d-flex justify-content-between"><span>Phí vận chuyển</span><span>@Model.PhiVanChuyen.ToString("N0")đ</span></div>
+                @if (Model.GiamGia > 0)
+                {
+                    <div class="d-flex justify-content-between text-success"><span>Giảm giá</span><span>-@Model.GiamGia.ToString("N0")đ</span></div>
+                }
+                <hr />
+                <div class="d-flex justify-content-between fw-bold fs-5">
+                    <span>Tổng thanh toán</span>
+                    <span class="text-danger">@Model.TongThanhToan.ToString("N0")đ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
