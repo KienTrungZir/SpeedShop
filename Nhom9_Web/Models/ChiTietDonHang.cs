@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace Nhom9_Web.Models
 {
     public class ChiTietDonHang
@@ -6,14 +8,17 @@ namespace Nhom9_Web.Models
 
         public int DonHangId { get; set; }
 
+        [ValidateNever]
         public DonHang DonHang { get; set; } = null!;
 
         public int SanPhamId { get; set; }
 
+        [ValidateNever]
         public SanPham SanPham { get; set; } = null!;
 
         public int? BienTheSanPhamId { get; set; }
 
+        [ValidateNever]
         public BienTheSanPham? BienTheSanPham { get; set; }
 
         public string TenSanPham { get; set; } = string.Empty;
@@ -27,3 +32,4 @@ namespace Nhom9_Web.Models
         public decimal ThanhTien => SoLuong * DonGia;
     }
 }
+

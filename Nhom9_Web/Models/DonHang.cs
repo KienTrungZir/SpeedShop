@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Nhom9_Web.Models.Enums;
 
 namespace Nhom9_Web.Models
@@ -10,6 +11,7 @@ namespace Nhom9_Web.Models
 
         public string UserId { get; set; } = string.Empty;
 
+        [ValidateNever]
         public ApplicationUser User { get; set; } = null!;
 
         public string HoTenNguoiNhan { get; set; } = string.Empty;
@@ -38,6 +40,7 @@ namespace Nhom9_Web.Models
 
         public int? MaGiamGiaId { get; set; }
 
+        [ValidateNever]
         public MaGiamGia? MaGiamGia { get; set; }
 
         public string? GhiChu { get; set; }
@@ -46,6 +49,8 @@ namespace Nhom9_Web.Models
 
         public DateTime? NgayGiao { get; set; }
 
+        [ValidateNever]
         public ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
     }
 }
+

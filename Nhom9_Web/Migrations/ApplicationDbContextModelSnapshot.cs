@@ -295,7 +295,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("SanPhamId");
 
-                    b.ToTable("BienTheSanPhams");
+                    b.ToTable("BienTheSanPhams", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.ChiTietDonHang", b =>
@@ -339,7 +339,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("SanPhamId");
 
-                    b.ToTable("ChiTietDonHangs");
+                    b.ToTable("ChiTietDonHangs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.ChiTietGioHang", b =>
@@ -377,7 +377,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("SanPhamId");
 
-                    b.ToTable("ChiTietGioHangs");
+                    b.ToTable("ChiTietGioHangs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.DanhGiaSanPham", b =>
@@ -415,7 +415,7 @@ namespace Nhom9_Web.Migrations
                     b.HasIndex("SanPhamId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("DanhGiaSanPhams");
+                    b.ToTable("DanhGiaSanPhams", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.DanhMuc", b =>
@@ -447,7 +447,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DanhMucs");
+                    b.ToTable("DanhMucs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.DiaChiGiaoHang", b =>
@@ -498,7 +498,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DiaChiGiaoHangs");
+                    b.ToTable("DiaChiGiaoHangs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.DonHang", b =>
@@ -589,7 +589,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DonHangs");
+                    b.ToTable("DonHangs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.GioHang", b =>
@@ -615,7 +615,7 @@ namespace Nhom9_Web.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("GioHangs");
+                    b.ToTable("GioHangs", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.HinhAnhSanPham", b =>
@@ -644,7 +644,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("SanPhamId");
 
-                    b.ToTable("HinhAnhSanPhams");
+                    b.ToTable("HinhAnhSanPhams", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.MaGiamGia", b =>
@@ -695,7 +695,7 @@ namespace Nhom9_Web.Migrations
                     b.HasIndex("MaCode")
                         .IsUnique();
 
-                    b.ToTable("MaGiamGias");
+                    b.ToTable("MaGiamGias", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.QuanHuyen", b =>
@@ -718,7 +718,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("TinhThanhId");
 
-                    b.ToTable("QuanHuyens");
+                    b.ToTable("QuanHuyens", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.SanPham", b =>
@@ -816,7 +816,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("ThuongHieuId");
 
-                    b.ToTable("SanPhams");
+                    b.ToTable("SanPhams", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.ThuongHieu", b =>
@@ -849,7 +849,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ThuongHieus");
+                    b.ToTable("ThuongHieus", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.TinNhan", b =>
@@ -885,7 +885,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasIndex("NguoiGuiId", "NguoiNhanId", "NgayGui");
 
-                    b.ToTable("TinNhans");
+                    b.ToTable("TinNhans", (string)null);
                 });
 
             modelBuilder.Entity("Nhom9_Web.Models.TinhThanh", b =>
@@ -907,7 +907,7 @@ namespace Nhom9_Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TinhThanhs");
+                    b.ToTable("TinhThanhs", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

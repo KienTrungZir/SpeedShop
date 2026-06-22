@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace Nhom9_Web.Models
 {
     public class HinhAnhSanPham
@@ -6,6 +8,7 @@ namespace Nhom9_Web.Models
 
         public int SanPhamId { get; set; }
 
+        [ValidateNever]
         public SanPham SanPham { get; set; } = null!;
 
         public string DuongDanAnh { get; set; } = string.Empty;
@@ -15,3 +18,4 @@ namespace Nhom9_Web.Models
         public bool LaAnhChinh { get; set; }
     }
 }
+

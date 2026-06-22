@@ -58,7 +58,7 @@ namespace Nhom9_Web.Hubs
             {
                 Id = daLuu.Id,
                 NguoiGuiId = daLuu.NguoiGuiId,
-                NguoiNhanId = daLuu.NguoiNhanId,
+                NguoiNhanId = daLuu.NguoiNhanId,    
                 NguoiGuiTen = daLuu.NguoiGuiTen,
                 NoiDung = daLuu.NoiDung,
                 NgayGui = daLuu.NgayGui

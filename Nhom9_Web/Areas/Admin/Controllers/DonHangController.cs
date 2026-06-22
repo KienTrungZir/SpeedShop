@@ -47,8 +47,40 @@ namespace Nhom9_Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CapNhatTrangThai(int id, TrangThaiDonHang trangThai)
         {
-            var donHang = await _context.DonHangs.FindAsync(id);
+            var donHang = await _context.DonHangs
+                .Include(d => d.ChiTietDonHangs)
+                .FirstOrDefaultAsync(d => d.Id == id);
+
             if (donHang == null) return NotFound();
+
+            // Nếu đơn hàng chuyển từ trạng thái khác sang Đã Hủy
+            if (donHang.TrangThai != TrangThaiDonHang.DaHuy && trangThai == TrangThaiDonHang.DaHuy)
+            {
+                // Hoàn lại số lượng tồn kho
+                foreach (var item in donHang.ChiTietDonHangs)
+                {
+                    var sp = await _context.SanPhams
+                        .Include(s => s.BienTheSanPhams)
+                        .FirstOrDefaultAsync(s => s.Id == item.SanPhamId);
+
+                    if (sp != null)
+                    {
+                        if (item.BienTheSanPhamId.HasValue)
+                        {
+                            var bienThe = sp.BienTheSanPhams.FirstOrDefault(b => b.Id == item.BienTheSanPhamId);
+                            if (bienThe != null) bienThe.SoLuongTon += item.SoLuong;
+                        }
+                        else
+                        {
+                            sp.SoLuongTon += item.SoLuong;
+                        }
+                        
+                        // Trừ lại lượt bán (nếu muốn)
+                        sp.LuotBan -= item.SoLuong;
+                        if (sp.LuotBan < 0) sp.LuotBan = 0;
+                    }
+                }
+            }
 
             donHang.TrangThai = trangThai;
             if (trangThai == TrangThaiDonHang.DaGiao || trangThai == TrangThaiDonHang.HoanThanh)

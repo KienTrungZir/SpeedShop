@@ -152,4 +152,4 @@ D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\refint\Nhom9_Web.d
 D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.pdb
 D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.genruntimeconfig.cache
 D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\ref\Nhom9_Web.dll
-D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\MyProject\LapTrinhWeb\Nhom9_Web\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.sourcelink.json

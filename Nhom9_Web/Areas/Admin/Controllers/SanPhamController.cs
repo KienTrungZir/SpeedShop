@@ -49,7 +49,7 @@ namespace Nhom9_Web.Areas.Admin.Controllers
             _context.SanPhams.Add(model);
             await _context.SaveChangesAsync();
             TempData["ThanhCong"] = "Thêm sản phẩm thành công.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Sua(int id)
@@ -62,7 +62,7 @@ namespace Nhom9_Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Sua(int id, SanPham model)
+        public async Task<IActionResult> Sua([FromRoute] int id, SanPham model)
         {
             if (id != model.Id) return NotFound();
             if (!ModelState.IsValid)
@@ -95,21 +95,28 @@ namespace Nhom9_Web.Areas.Admin.Controllers
 
             await _context.SaveChangesAsync();
             TempData["ThanhCong"] = "Cập nhật sản phẩm thành công.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        [HttpPost]  
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Xoa(int id)
         {
             var sp = await _context.SanPhams.FindAsync(id);
             if (sp != null)
             {
-                _context.SanPhams.Remove(sp);
-                await _context.SaveChangesAsync();
-                TempData["ThanhCong"] = "Đã xóa sản phẩm.";
+                try
+                {
+                    _context.SanPhams.Remove(sp);
+                    await _context.SaveChangesAsync();
+                    TempData["ThanhCong"] = "Đã xóa sản phẩm.";
+                }
+                catch (DbUpdateException)
+                {
+                    TempData["Loi"] = "Không thể xóa sản phẩm này vì đã phát sinh Đơn hàng hoặc Phiếu nhập kho. Bạn hãy Sửa sản phẩm và tắt trạng thái 'Hiển thị' thay vì xóa.";
+                }
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         private async Task NapDropdownAsync()
