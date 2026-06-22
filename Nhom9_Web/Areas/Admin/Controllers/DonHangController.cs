@@ -85,7 +85,7 @@ namespace Nhom9_Web.Areas.Admin.Controllers
             donHang.TrangThai = trangThai;
             if (trangThai == TrangThaiDonHang.DaGiao || trangThai == TrangThaiDonHang.HoanThanh)
                 donHang.NgayGiao = DateTime.UtcNow;
-
+            //
             await _context.SaveChangesAsync();
             TempData["ThanhCong"] = "Cập nhật trạng thái đơn hàng thành công.";
             return RedirectToAction(nameof(ChiTiet), new { id });
