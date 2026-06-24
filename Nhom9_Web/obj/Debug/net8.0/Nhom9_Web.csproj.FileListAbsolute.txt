@@ -302,10 +302,10 @@ C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\staticwebassets.development.json
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\swae.build.ex.cache
-C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.csproj.Up2Date
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.dll
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\refint\Nhom9_Web.dll
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.pdb
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\Nhom9_Web.genruntimeconfig.cache
 C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\ref\Nhom9_Web.dll
+C:\Hutech\SpeedShop\Nhom9_Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

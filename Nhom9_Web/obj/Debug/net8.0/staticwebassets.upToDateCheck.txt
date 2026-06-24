@@ -1,5 +1,10 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\lining_tectonic_9.jpg
+wwwroot\images\victor_ryuga.jpg
+wwwroot\images\yonex_65z3.jpg
+wwwroot\images\yonex_astrox_88d.jpg
+wwwroot\images\yonex_backpack.jpg
 wwwroot\js\chat.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

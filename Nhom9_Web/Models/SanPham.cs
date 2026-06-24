@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace Nhom9_Web.Models
 {
     public class SanPham
@@ -20,10 +22,12 @@ namespace Nhom9_Web.Models
 
         public int DanhMucId { get; set; }
 
+        [ValidateNever]
         public DanhMuc DanhMuc { get; set; } = null!;
 
         public int ThuongHieuId { get; set; }
 
+        [ValidateNever]
         public ThuongHieu ThuongHieu { get; set; } = null!;
 
         public string? AnhDaiDien { get; set; }
@@ -54,14 +58,19 @@ namespace Nhom9_Web.Models
 
         public DateTime? NgayCapNhat { get; set; }
 
+        [ValidateNever]
         public ICollection<HinhAnhSanPham> HinhAnhSanPhams { get; set; } = new List<HinhAnhSanPham>();
 
+        [ValidateNever]
         public ICollection<BienTheSanPham> BienTheSanPhams { get; set; } = new List<BienTheSanPham>();
 
+        [ValidateNever]
         public ICollection<ChiTietGioHang> ChiTietGioHangs { get; set; } = new List<ChiTietGioHang>();
 
+        [ValidateNever]
         public ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
 
+        [ValidateNever]
         public ICollection<DanhGiaSanPham> DanhGiaSanPhams { get; set; } = new List<DanhGiaSanPham>();
     }
 }
